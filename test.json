@@ -44,6 +44,61 @@
                 "price" : ""
             },
             {
+                "src_thumb": "img/image_thumbnail.png",
+                "src_big": "img/big_image.png",
+                "active" : " ",
+                "type" : "etno",
+                "content" : "второй элемент",
+                "weight" : "",
+                "stones" : "",
+                "size" : "",
+                "price" : ""
+            },
+            {
+                "src_thumb": "img/image_thumbnail.png",
+                "src_big": "img/big_image.png",
+                "active" : " ",
+                "type" : "etno",
+                "content" : "третий элемент",
+                "weight" : "",
+                "stones" : "",
+                "size" : "",
+                "price" : ""
+            },
+            {
+                "src_thumb": "img/image_thumbnail.png",
+                "src_big": "img/big_image.png",
+                "active" : " ",
+                "type" : "etno",
+                "content" : "четвертый элемент",
+                "weight" : "",
+                "stones" : "",
+                "size" : "",
+                "price" : ""
+            },
+            {
+                "src_thumb": "img/image_thumbnail.png",
+                "src_big": "img/big_image.png",
+                "active" : " ",
+                "type" : "etno",
+                "content" : "четвертый элемент",
+                "weight" : "",
+                "stones" : "",
+                "size" : "",
+                "price" : ""
+            },
+            {
+                "src_thumb": "img/image_thumbnail.png",
+                "src_big": "img/big_image.png",
+                "active" : " ",
+                "type" : "etno",
+                "content" : "четвертый элемент",
+                "weight" : "",
+                "stones" : "",
+                "size" : "",
+                "price" : ""
+            },
+            {
                 "src_thumb" : "img/image_thumbnail.png",
                 "src_big" : "img/big_image.png",
                 "active" : " ",

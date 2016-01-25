@@ -1,21 +1,7 @@
 var app = angular.module('kazyna_app', ['ngAnimate'])
 
     .controller('kazyna_main',function($scope, $http,  $filter, $window){
-        $scope.catalog_window = {
-            src_big : '',
-            content : '',
-            weight : '',
-            stones : '',
-            size : '',
-            price : ''
-        }
-
-        window.filter_begin = 0;
-        $scope.filter_param = 'etno'
-        $scope.active_elem = 0
-        $scope.width = ''
-        $scope.filter_begin = 0;
-        $scope.filter_limit = 4
+        // Данные для построения приложения
         $scope.catalog_filter = [
             {
                 name : 'Этно дизайн',
@@ -53,7 +39,40 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
                 active : ' '
             }
         ]
-        $scope.catalog_thumnail = []
+
+
+        // Основной объект для построения окна с информацией
+        $scope.catalog_window = {
+            src_big : '',
+            content : '',
+            weight : '',
+            stones : '',
+            size : '',
+            price : ''
+        }
+
+        // Параметр по которому происходит главная фильтрация
+        $scope.filter_param = 'etno'
+        $scope.filter_paran_number = 0
+
+        // номер активной миниатюры, создан для того, что бы
+        // знать какой элемент в данный момент активен и не перезаписывать его
+        $scope.active_elem = 0
+
+        // Нужно для переключения миниатюр
+        $scope.width = ''
+
+        // Начальная позиция для фильтрации массива с данными
+        // который приходит с сервера
+        $scope.filter_begin = 0;
+
+        // Кол-во миниатюр на странице,
+        // изменяется с размерами экрана
+        $scope.filter_limit = 4;
+
+        // Массив строк для фильтрации основного массива по его свойству
+        // это свойство задается в админ панели и является определяющим фактором
+        // при выборке элемента
         $scope.catalog_main_filter = [
             'etno',
             'obr_',
@@ -63,82 +82,88 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
             'cullon',
             'another'
         ]
+
+        // Наблюдаемые миниатюры на странице
+        // первый элемент - кол-во элементов на странице в текущий момент
+        // второй элемент - кол-во всех элементов в ленте
+        // третий элемент - отображает кол-во элементов в ленте на текущий момент
+        // оба эти параметра выводятся на страницу при помощи деректив
         $scope.length_watch = [
             4,
             0
         ]
 
+        // В этой функции проходит загрузка данных, инициализация и первое построение приложения
         $http.get('test.json').then(function (value) {
             $scope.catalog_thumnail = value.data;
-            $scope.thumbnail_click(-1);
-            $scope.length_watch[1] = $filter('filter')($scope.catalog_thumnail, $scope.filter_param).length;
+            $scope.main_filter_func(0);
 
             if( document.documentElement.clientWidth > 1230){
                 $scope.width = 694;
                 $scope.filter_limit = 4;
-            }
-
-            if( document.documentElement.clientWidth < 1230){
+                $scope.length_watch[0] = 4;
+            } else if( document.documentElement.clientWidth < 1230){
                 $scope.width = 519;
                 $scope.filter_limit = 3;
-            }
-
-            if( document.documentElement.clientWidth < 600){
+                $scope.length_watch[0] = 3;
+            } else if( document.documentElement.clientWidth < 600){
                 $scope.filter_limit = $scope.length_watch[1];
             }
-
-            //$scope.test_funt = function() {
-            //
-            //    if( document.documentElement.clientWidth > 1230){
-            //        $scope.width = 659;
-            //    }
-            //
-            //    if( document.documentElement.clientWidth < 1230){
-            //        $scope.width = 519;
-            //    }
-            //
-            //    if( document.documentElement.clientWidth < 600){
-            //        $scope.filter_limit = $filter('filter')($scope.catalog_thumnail, $scope.filter_param).length;
-            //        console.log($scope.filter_limit);
-            //    }
-            //}
         });
 
+        // Для фильтрации основного массива с данными по критерию $scope.filter_param
+        // Так же обнуляет активность и положение миниатюр
         $scope.main_filter_func = function(argument){
             $scope.filter_param = $scope.catalog_main_filter[argument];
             $scope.catalog_filter[$scope.active_elem].active = ' ';
             $scope.active_elem = argument;
-            //$scope.catalog_filter[argument].active = 'active';
             $scope.length_watch[1] = $filter('filter')($scope.catalog_thumnail, $scope.filter_param).length;
+            $scope.filter_begin = 0;
+            $scope.length_watch[0] = $scope.filter_limit;
             $scope.thumbnail_click(0);
         }
 
+        // нажатие на кнопку возле МИНИАТЮРЫ -> назад
         $scope.previous_button = function(){
             if($scope.filter_begin != 0) {
-
-                var filter_check_on_null = $scope.filter_begin == 0 ? 1 : $scope.filter_begin;
+                if( document.querySelectorAll('.catalog_elem_thumb').length % $scope.filter_limit == 0){
+                    $scope.length_watch[0] -= $scope.filter_limit;
+                } else{
+                    if ($scope.length_watch[2] == $scope.filter_limit){
+                        $scope.length_watch[0] -= $scope.filter_limit;
+                    } else{
+                        $scope.length_watch[0] -= $scope.length_watch[2];
+                        $scope.length_watch[2] = $scope.filter_limit;
+                    }
+                }
 
                 $scope.filter_begin -= 1;
-                $scope.length_watch[0] -= document.querySelectorAll('.catalog_elem_thumb').length - filter_check_on_null * $scope.filter_limit;
             }
         }
 
+
+        // нажатие на кнопку возле МИНИАТЮРЫ -> назад
         $scope.next_button = function(){
             if($scope.filter_array() ) {
 
-                var filter_check_on_null = $scope.filter_begin == 0 ? 1 : $scope.filter_begin;
-
+                //var filter_check_on_null = $scope.filter_begin == 0 ? 1 : $scope.filter_begin;
+                //console.log(document.querySelectorAll('.catalog_elem_thumb').length);
                 $scope.filter_begin += 1;
-                var init_variable = $filter('filter')($scope.catalog_thumnail, $scope.filter_param);
+                //var init_variable = $filter('filter')($scope.catalog_thumnail, $scope.filter_param);
 
-                if( (document.querySelectorAll('.catalog_elem_thumb').length - filter_check_on_null * $scope.filter_limit) > 4){
-                    $scope.length_watch[0] += 4;
+                if( document.querySelectorAll('.catalog_elem_thumb').length - $scope.length_watch[0] > $scope.filter_limit){
+                    $scope.length_watch[2] = $scope.filter_limit;
+                    $scope.length_watch[0] += $scope.filter_limit;
                 }else{
-                    $scope.length_watch[0] += document.querySelectorAll('.catalog_elem_thumb').length - filter_check_on_null * $scope.filter_limit;
+                    $scope.length_watch[2] = document.querySelectorAll('.catalog_elem_thumb').length - $scope.length_watch[0];
+                    $scope.length_watch[0] += document.querySelectorAll('.catalog_elem_thumb').length - $scope.length_watch[0];
+                    console.log($scope.length_watch[2]);
                 }
             }
         }
 
+
+        // нажатие на кнопку возле МИНИАТЮРЫ -> вперед
         $scope.filter_array = function(){
 
             var filter_check_on_null = $scope.filter_begin + 1;
@@ -155,15 +180,11 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
                 return true;
         }
 
+
+        // нажатие на кнопку МИНИАТЮРЫ
         $scope.thumbnail_click = function(argument) {
+            var init_variable = $filter('filter')($scope.catalog_thumnail, $scope.filter_param)[argument];
 
-            if (argument == -1 ){
-                var init_variable = $filter('filter')($scope.catalog_thumnail, $scope.filter_param)[0];
-            }else {
-                var init_variable = $filter('filter')($scope.catalog_thumnail, $scope.filter_param);
-                    init_variable = $filter('limitTo')(init_variable, $scope.filter_limit, $scope.filter_begin)[argument];
-
-            }
             $scope.catalog_window.src_big = init_variable.src_big;
             $scope.catalog_window.content = init_variable.content;
             $scope.catalog_window.weight = init_variable.weight;
@@ -172,11 +193,11 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
             $scope.catalog_window.price = init_variable.price;
         }
 
+        // нажатие на стрелки в миниатюре, показываются в мобильной версии
         $scope.arrow_click = function (argument) {
-            console.log($scope.filter_limit);
             if(argument < $filter('filter')($scope.catalog_thumnail, $scope.filter_param).length ){
-                $scope.thumbnail_click(argument);
                 if (argument > -1 ){
+                    $scope.thumbnail_click(argument);
                     $scope.active_elem = argument;
                 }
             }

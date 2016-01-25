@@ -71,7 +71,7 @@ a {
     padding-top: 45px;
     padding-bottom: 116px;
     background: url(../img/back_catalog.jpg) no-repeat;
-    font-family: Arsenal;
+    font-family: Arsenal, sans-serif;
     font-weight: bold; }
     @media only screen and (min-width: 320px) {
       #catalog .menu {
@@ -89,7 +89,7 @@ a {
       float: right;
       padding-top: 10px;
       color: #fff;
-      font-family: Arsenal;
+      font-family: Arsenal, sans-serif;
       font-size: 14pt;
       width: 165px; }
     #catalog .menu .line {
@@ -116,8 +116,6 @@ a {
       background: linear-gradient(to bottom, #f2efdf 0%, #c0ad61 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2efdf', endColorstr='#c0ad61',GradientType=0 );
       -webkit-background-clip: text;
-      -moz-background-clip: text;
-      background-clip: text;
       color: transparent;
       text-align: center;
       position: relative; }
@@ -150,8 +148,6 @@ a {
       background: linear-gradient(to bottom, #f2efdf 0%, #c0ad61 100%);
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2efdf', endColorstr='#c0ad61',GradientType=0 );
       -webkit-background-clip: text;
-      -moz-background-clip: text;
-      background-clip: text;
       color: transparent;
       text-align: center;
       position: relative;
@@ -226,7 +222,7 @@ a {
               #catalog .window .info .border .border1 .post_content .image .arrow_right:hover {
                 transform: scale(-1); }
             #catalog .window .info .border .border1 .post_content .image .watched_mobile {
-              font-family: Arsenal;
+              font-family: Arsenal, sans-serif;
               font-size: 16px;
               font-weight: 400;
               position: absolute;
@@ -289,7 +285,7 @@ a {
                 overflow: hidden; } }
             @media only screen and (min-width: 1024px) {
               #catalog .window .info .border .border1 .thumbnails .content_catalog .wrapper {
-                width: 1000px;
+                width: 10000px;
                 position: relative;
                 transition: left 0.3s ease; } }
             #catalog .window .info .border .border1 .thumbnails .content_catalog .catalog_elem_thumb {
