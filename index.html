@@ -59,8 +59,11 @@
 						<div class="border2">
 							<div class="post_content clear">
 								<div class="image">
+									<div class="watched_mobile"><span>{{active_elem + 1}}</span> из {{length_watch[1]}}</div>
 									<img ng-src="{{catalog_window.src_big}}" alt="image">
 									<img src="img/zoom.png" alt="zoom">
+									<div class="arrow arrow_left" ng-click="arrow_click(active_elem - 1)"></div>
+									<div class="arrow arrow_right" ng-click="arrow_click(active_elem + 1)"></div>
 								</div>
 								<div class="text">
 									<h3>Описание</h3>

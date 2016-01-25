@@ -1,0 +1,56 @@
+[
+            {
+                "src_thumb" : "img/image_thumbnail.png",
+                "src_big" : "img/big_image.png",
+                "active" : "active",
+                "type" : "etno",
+                "content" : "Разнообразный и богатый опыт постоянный количественный рост и сфера нашей активности влечет за собой процесс внедрения и модернизации новых предложений.",
+                "weight" : "3 гр.",
+                "stones" : "текст",
+                "size" : "18, 19, 22",
+                "price" : "28 000 тг"
+            },
+            {
+                "src_thumb": "img/image_thumbnail.png",
+                "src_big": "img/big_image.png",
+                "active" : " ",
+                "type" : "etno",
+                "content" : "второй элемент",
+                "weight" : "",
+                "stones" : "",
+                "size" : "",
+                "price" : ""
+            },
+            {
+                "src_thumb": "img/image_thumbnail.png",
+                "src_big": "img/big_image.png",
+                "active" : " ",
+                "type" : "etno",
+                "content" : "третий элемент",
+                "weight" : "",
+                "stones" : "",
+                "size" : "",
+                "price" : ""
+            },
+            {
+                "src_thumb": "img/image_thumbnail.png",
+                "src_big": "img/big_image.png",
+                "active" : " ",
+                "type" : "etno",
+                "content" : "четвертый элемент",
+                "weight" : "",
+                "stones" : "",
+                "size" : "",
+                "price" : ""
+            },
+            {
+                "src_thumb" : "img/image_thumbnail.png",
+                "src_big" : "img/big_image.png",
+                "active" : " ",
+                "type" : "etno",
+                "content" : "test",
+                "weight" : "",
+                "stones" : "",
+                "size" : "",
+                "price" : ""
+            }]

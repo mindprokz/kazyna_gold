@@ -209,6 +209,40 @@ a
 								transition: opacity .3s ease
 								&:hover
 									opacity: 1
+							.arrow
+								@include media_quer('small-visible')
+								@include media_quer('tablet-hidden')
+								position: absolute
+								top: 45%
+								width: 18px
+								height: 32px
+								background: url(../img/arrow.jpg) no-repeat
+								cursor: pointer
+								&:hover
+									background: url(../img/arrow_hover.jpg) no-repeat
+							.arrow_left
+								transform: scale(-1)
+								left: 5px
+								&:hover
+									transform: scale(1)
+							.arrow_right
+								transform: scale(1)
+								right: 5px
+								&:hover
+									transform: scale(-1)
+							.watched_mobile
+								@include media_quer('small-visible')
+								@include media_quer('tablet-hidden')
+								font-family: Arsenal
+								font-size: 16px
+								font-weight: 400
+								position: absolute
+								top: 5px
+								right: 5px
+								color: #939393
+								span
+									color: #4f4e4e
+
 						.text
 							padding-left: 15px
 							float: left
