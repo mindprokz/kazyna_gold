@@ -52,6 +52,7 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
         }
 
         // Параметр по которому происходит главная фильтрация
+        // и номер этого свойства в массиве с названиями
         $scope.filter_param = 'etno'
         $scope.filter_paran_number = 0
 
@@ -93,6 +94,11 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
             0
         ]
 
+        // Показанный текст в мобильной версии зависит от этого свойства
+        // принимает 2 значения show_text и hide_text
+        $scope.show_post = 'hide_text';
+        $scope.mobile_icon_show = 0;
+
         // В этой функции проходит загрузка данных, инициализация и первое построение приложения
         $http.get('test.json').then(function (value) {
             $scope.catalog_thumnail = value.data;
@@ -116,12 +122,28 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
         $scope.main_filter_func = function(argument){
             $scope.filter_param = $scope.catalog_main_filter[argument];
             $scope.catalog_filter[$scope.active_elem].active = ' ';
-            $scope.active_elem = argument;
+            $scope.active_elem = 0;
             $scope.length_watch[1] = $filter('filter')($scope.catalog_thumnail, $scope.filter_param).length;
-            $scope.filter_begin = 0;
+            $scope.filter_begin = $scope.active_elem;
             $scope.length_watch[0] = $scope.filter_limit;
-            $scope.thumbnail_click(0);
+            $scope.thumbnail_click($scope.active_elem);
         }
+
+
+        // Скрипт для выборки на мобильных устройствах
+        // скрипт использует тег select и вызывается
+        // когда значение меняется
+        $scope.mobile_select_filter_func = function(){
+            var argument_change = '';
+
+            for (var i = 0, len = $scope.catalog_main_filter.length; i < len; i++){
+                if ($scope.catalog_main_filter[i] === $scope.filter_param)
+                    argument_change = i;
+            }
+            $scope.mobile_icon_show = argument_change;
+            $scope.main_filter_func(argument_change);
+        }
+
 
         // нажатие на кнопку возле МИНИАТЮРЫ -> назад
         $scope.previous_button = function(){
@@ -172,12 +194,6 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
                 return true;
             }
                 return false;
-            var init_variable = $filter('filter')($scope.catalog_thumnail, $scope.filter_param),
-                filter_begin = $scope.filter_begin == 0 ? $scope.filter_limit : $scope.filter_begin;
-            if(init_variable.length / filter_begin < 1 || init_variable.length / filter_begin == 1){
-                return false;
-            }
-                return true;
         }
 
 
@@ -193,7 +209,7 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
             $scope.catalog_window.price = init_variable.price;
         }
 
-        // нажатие на стрелки в миниатюре, показываются в мобильной версии
+        // нажатие на стрелки в миниатюре, стрелки показываются в мобильной версии
         $scope.arrow_click = function (argument) {
             if(argument < $filter('filter')($scope.catalog_thumnail, $scope.filter_param).length ){
                 if (argument > -1 ){
@@ -221,4 +237,5 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
                 $scope.filter_limit = $filter('filter')($scope.catalog_thumnail, $scope.filter_param).length;
             }
         });
+
     })

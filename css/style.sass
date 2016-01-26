@@ -68,12 +68,15 @@ a
 	text-decoration : none
 
 .content
-	width: 1170px
 	margin: auto
 	@include media_quer('small')
 		width: 320px
+		padding-left: 10px
+		padding-right: 10px
 	@include media_quer('tablet')
 		width: 1024px
+		padding-left: 0px
+		padding-right: 0px
 	@include media_quer('desktop')
 		width: 1170px
 
@@ -143,7 +146,7 @@ a
 	.window
 		position: relative
 		@include media_quer('small')
-			width: 300px
+			width: 320px
 			margin: auto
 		@include media_quer('tablet')
 			width: 625px
@@ -179,13 +182,63 @@ a
 			padding: 10px
 			background: #fff
 			.border
-				border: 1px solid #e9c34d
+				@include media_quer('tablet')
+					border: 1px solid #e9c34d
 				.border1
-					border: 1px solid #f3dfa0
+					@include media_quer('tablet')
+						border: 1px solid #f3dfa0
 					.border2
-						border: 1px solid #eac758
-						padding: 20px
+						@include media_quer('tablet')
+							border: 1px solid #eac758
+							padding: 20px
 					.post_content
+						.mobile_select
+							margin-bottom: 10px
+							@include media_quer('tablet-hidden')
+							.select_image
+								width: 50px
+								height: 50px
+								border-radius: 50%
+								border: 1px solid #d1d1d1
+								position: relative
+								img
+									max-width: 34px
+									max-height: 38px
+									width: auto
+									height: auto
+									position: absolute
+									top: 50%
+									left: 50%
+									transform: translate(-50%, -50%)
+							select
+								margin-top: 3px
+								float: right
+								border: 1px solid #dcb2b9
+								background: none
+								padding: 10px 0 7px 10px
+								width: 220px
+								font-size: 18px
+								font-family: Arsenal, sans-serif
+						button
+							@include media_quer('tablet-hidden')
+							width: 300px
+							height: 39px
+							background-color: #d2ae6d
+							border-radius: 5px
+							border: 0
+							color: white
+							font-family: Arsenal,sans-serif
+							font-size: 20px
+							font-weight: 400
+							text-transform: uppercase
+							margin-top: 15px
+							margin-top: 15px
+							transition: background .3s ease
+							&:hover
+								background-color: #DAC59F
+							&:active
+								border: 0
+								outline: 0
 						.image
 							border: 2px solid #d9d9d9
 							float: left
@@ -246,6 +299,7 @@ a
 						.text
 							padding-left: 15px
 							float: left
+							transition: height .3s ease
 							@include media_quer('tablet')
 								width: 249px
 							@include media_quer('desktop')
@@ -262,6 +316,11 @@ a
 								font-size: 18pt
 								span
 									color: #3d3d3d
+						.show_text
+							height: auto
+						.hide_text
+							height: 0
+							overflow: hidden
 					.thumbnails
 						@include media_quer('small-hidden')
 						@include media_quer('tablet-visible')
