@@ -58,6 +58,20 @@
 					<div class="border1">
 						<div class="border2">
 							<div class="post_content clear">
+								<div class="mobile_select">
+									<select name="" id="" ng-model="filter_param" ng-change="mobile_select_filter_func()">
+										<option value="etno">Этно дизайн</option>
+										<option value="obr_">Обручальные кольца</option>
+										<option value="ring">Кольца</option>
+										<option value="serg">Серьги</option>
+										<option value="chil_collect">Детская коллекция</option>
+										<option value="cullon">Кулоны</option>
+										<option value="another">Остальное</option>
+									</select>
+									<div class="select_image">
+										<img ng-src="img/icon_catalog/{{mobile_icon_show + 1}}.png" alt="">
+									</div>
+								</div>
 								<div class="image">
 									<div class="watched_mobile"><span>{{active_elem + 1}}</span> из {{length_watch[1]}}</div>
 									<img ng-src="{{catalog_window.src_big}}" alt="image">
@@ -65,7 +79,8 @@
 									<div class="arrow arrow_left" ng-click="arrow_click(active_elem - 1)"></div>
 									<div class="arrow arrow_right" ng-click="arrow_click(active_elem + 1)"></div>
 								</div>
-								<div class="text">
+								<button ng-click="show_post == 'show_text' ? show_post = 'hide_text' : show_post = 'show_text'">Описание</button>
+								<div class="text {{show_post}}">
 									<h3>Описание</h3>
 									<p>{{catalog_window.content}}</p>
 									<h3>Вес: <span>{{catalog_window.weight}}</span></h3>
@@ -86,7 +101,7 @@
 								</div>
 								<div class="arrow_right" ng-click="next_button()"></div>
 							</div>
-							<h3 class="watched">Вы просмотрели: {{length_watch[0] +' из '+ length_watch[1]}}</h3>
+							<h3 class="watched">Вы просмотрели: {{ length_watch[0] +' из '+ length_watch[1] }}</h3>
 						</div>
 					</div>
 				</div>
