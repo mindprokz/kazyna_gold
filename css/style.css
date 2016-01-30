@@ -362,7 +362,8 @@ nav {
       text-align: center;
       font-size: 25px;
       font-weight: 400;
-      margin-top: 23px; }
+      margin-top: 23px;
+      margin-bottom: 18px; }
       .section3 h4.mobile_head span.first {
         font-size: 31px;
         font-weight: 700; } }
@@ -406,6 +407,118 @@ nav {
 @media only screen and (min-width: 1230px) {
   .section3 .icon_list {
     padding-left: 127px; } }
+
+@media only screen and (max-width: 600px) {
+  #magazine {
+    height: 245px;
+    overflow: hidden;
+    background-color: #f1f1f1; }
+    #magazine h3 {
+      color: #8a0017;
+      font-family: Arsenal, sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 20px; } }
+  @media only screen and (max-width: 600px) and (max-width: 600px) {
+    #magazine h4, #magazine h5, #magazine img[alt="model"] {
+      display: none !important; } }
+
+@media only screen and (min-width: 601px) {
+  #magazine {
+    height: auto;
+    background: url(../img/ornament_bg.jpg); }
+    #magazine .content {
+      position: relative; } }
+  @media only screen and (min-width: 601px) and (min-width: 601px) {
+    #magazine h3 {
+      display: none !important; } }
+@media only screen and (min-width: 601px) {
+    #magazine h4 {
+      color: #3a3a3a;
+      font-family: Arsenal, sans-serif;
+      font-size: 38px;
+      font-weight: 700;
+      text-align: center;
+      padding-top: 34px;
+      margin-bottom: 25px; }
+    #magazine h5 {
+      color: #8a0017;
+      font-family: Arsenal, sans-serif;
+      font-size: 45px;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 74px;
+      margin-bottom: 58px; }
+    #magazine img[alt="model"] {
+      position: absolute;
+      bottom: -145px;
+      left: -155px; }
+    #magazine .ornament {
+      background: url(../img/ornament_white.png);
+      height: 17px; } }
+@media only screen and (max-width: 600px) {
+  #magazine #canvas {
+    width: 280px;
+    height: 122px;
+    position: relative;
+    top: 0; }
+    #magazine #canvas .magazine {
+      width: 244px !important;
+      height: 122px !important;
+      left: -419px !important;
+      top: -205px !important; }
+    #magazine #canvas .magazine-viewport .previous-button {
+      width: 18px;
+      height: 32px;
+      position: absolute;
+      top: 38%;
+      left: 103.4% !important;
+      background: url(../img/arrow.png) no-repeat;
+      z-index: 25; }
+      #magazine #canvas .magazine-viewport .previous-button:hover {
+        background: url(../img/arrow_hover.png) no-repeat;
+        transform: scale(-1); }
+    #magazine #canvas .magazine-viewport .next-button {
+      width: 18px;
+      height: 32px;
+      position: absolute;
+      top: 38%;
+      left: -25px !important;
+      background: url(../img/arrow.png) no-repeat;
+      z-index: 25;
+      transform: scale(-1); }
+      #magazine #canvas .magazine-viewport .next-button:hover {
+        background: url(../img/arrow_hover.png) no-repeat;
+        transform: scale(1); } }
+@media only screen and (min-width: 601px) {
+  #magazine #canvas {
+    width: 895px;
+    height: 470px;
+    background: url(../img/pics/back.png) no-repeat;
+    position: relative;
+    top: 0;
+    background-size: contain;
+    margin: auto; }
+    #magazine #canvas .magazine {
+      width: 800px !important;
+      height: 400px !important; }
+    #magazine #canvas .magazine-viewport .previous-button {
+      width: 120px;
+      height: 110px;
+      position: absolute;
+      top: 38%;
+      left: 92.4% !important;
+      background: url(../img/pics/arrow_right.png) no-repeat;
+      z-index: 25; }
+    #magazine #canvas .magazine-viewport .next-button {
+      width: 120px;
+      height: 110px;
+      position: absolute;
+      top: 38%;
+      left: -55px !important;
+      background: url(../img/pics/arrow_lest.png) no-repeat;
+      z-index: 25; } }
 
 #catalog {
   padding-top: 55px;
@@ -604,7 +717,7 @@ nav {
           top: 45%;
           width: 18px;
           height: 32px;
-          background: url(../img/arrow.jpg) no-repeat;
+          background: url(../img/arrow.png) no-repeat;
           cursor: pointer; }
           @media only screen and (max-width: 600px) {
             #catalog .window .info .border .border1 .post_content .image .arrow {
@@ -613,7 +726,7 @@ nav {
             #catalog .window .info .border .border1 .post_content .image .arrow {
               display: none !important; } }
           #catalog .window .info .border .border1 .post_content .image .arrow:hover {
-            background: url(../img/arrow_hover.jpg) no-repeat; }
+            background: url(../img/arrow_hover.png) no-repeat; }
         #catalog .window .info .border .border1 .post_content .image .arrow_left {
           transform: scale(-1);
           left: 5px; }
@@ -676,36 +789,36 @@ nav {
         #catalog .window .info .border .border1 .post_content .hide_text {
           height: auto; } }
       @media only screen and (max-width: 600px) {
-        #catalog .window .info .border .border1 .thumbnails {
+        #catalog .window .info .border .border1 .thumbnails_conf {
           display: none !important; } }
       @media only screen and (min-width: 601px) {
-        #catalog .window .info .border .border1 .thumbnails {
+        #catalog .window .info .border .border1 .thumbnails_conf {
           display: block !important; } }
-      #catalog .window .info .border .border1 .thumbnails .arrow_left {
+      #catalog .window .info .border .border1 .thumbnails_conf .arrow_left {
         float: left;
         background: url(../img/arrows.png) no-repeat 0 0;
         width: 20px;
         height: 31px;
         cursor: pointer;
         margin-top: 55px; }
-        #catalog .window .info .border .border1 .thumbnails .arrow_left:hover {
+        #catalog .window .info .border .border1 .thumbnails_conf .arrow_left:hover {
           background-position: -20px 0; }
-      #catalog .window .info .border .border1 .thumbnails .content_catalog {
+      #catalog .window .info .border .border1 .thumbnails_conf .content_catalog {
         float: left; }
         @media only screen and (min-width: 601px) {
-          #catalog .window .info .border .border1 .thumbnails .content_catalog {
+          #catalog .window .info .border .border1 .thumbnails_conf .content_catalog {
             width: 519px;
             overflow: hidden; } }
         @media only screen and (min-width: 1230px) {
-          #catalog .window .info .border .border1 .thumbnails .content_catalog {
+          #catalog .window .info .border .border1 .thumbnails_conf .content_catalog {
             width: 694px;
             overflow: hidden; } }
         @media only screen and (min-width: 601px) {
-          #catalog .window .info .border .border1 .thumbnails .content_catalog .wrapper {
+          #catalog .window .info .border .border1 .thumbnails_conf .content_catalog .wrapper {
             width: 10000px;
             position: relative;
             transition: left 0.3s ease; } }
-        #catalog .window .info .border .border1 .thumbnails .content_catalog .catalog_elem_thumb {
+        #catalog .window .info .border .border1 .thumbnails_conf .content_catalog .catalog_elem_thumb {
           position: relative;
           width: 153px;
           height: 120px;
@@ -713,32 +826,32 @@ nav {
           float: left;
           margin: 10px 10px;
           overflow: hidden; }
-          #catalog .window .info .border .border1 .thumbnails .content_catalog .catalog_elem_thumb:hover > .frame {
+          #catalog .window .info .border .border1 .thumbnails_conf .content_catalog .catalog_elem_thumb:hover > .frame {
             background: url(../img/frame_catalog_hover.png) no-repeat; }
-          #catalog .window .info .border .border1 .thumbnails .content_catalog .catalog_elem_thumb img[alt="thumbnail"] {
+          #catalog .window .info .border .border1 .thumbnails_conf .content_catalog .catalog_elem_thumb img[alt="thumbnail"] {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%); }
-          #catalog .window .info .border .border1 .thumbnails .content_catalog .catalog_elem_thumb .frame {
+          #catalog .window .info .border .border1 .thumbnails_conf .content_catalog .catalog_elem_thumb .frame {
             width: 100%;
             height: 100%;
             background: url(../img/frame_catalog.png) no-repeat; }
-          #catalog .window .info .border .border1 .thumbnails .content_catalog .catalog_elem_thumb .active {
+          #catalog .window .info .border .border1 .thumbnails_conf .content_catalog .catalog_elem_thumb .active {
             background: url(../img/frame_catalog_hover.png) no-repeat; }
-        #catalog .window .info .border .border1 .thumbnails .content_catalog .catalog_elem_thumb.ng-enter {
+        #catalog .window .info .border .border1 .thumbnails_conf .content_catalog .catalog_elem_thumb.ng-enter {
           transition: all linear 1s;
           opacity: 0; }
-        #catalog .window .info .border .border1 .thumbnails .content_catalog .catalog_elem_thumb.ng-enter-active {
+        #catalog .window .info .border .border1 .thumbnails_conf .content_catalog .catalog_elem_thumb.ng-enter-active {
           opacity: 1; }
-      #catalog .window .info .border .border1 .thumbnails .arrow_right {
+      #catalog .window .info .border .border1 .thumbnails_conf .arrow_right {
         float: left;
         background: url(../img/arrows.png) no-repeat -40px 0;
         width: 20px;
         height: 31px;
         cursor: pointer;
         margin-top: 55px; }
-        #catalog .window .info .border .border1 .thumbnails .arrow_right:hover {
+        #catalog .window .info .border .border1 .thumbnails_conf .arrow_right:hover {
           background-position: -60px 0; }
       #catalog .window .info .border .border1 .watched {
         font-family: Arsenal, sans-serif;
