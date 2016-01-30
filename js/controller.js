@@ -96,8 +96,10 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
 
         // Показанный текст в мобильной версии зависит от этого свойства
         // принимает 2 значения show_text и hide_text
+        // класс мобильного меню принимает 2 значения hide_mobile_menu show_mobile_menu
         $scope.show_post = 'hide_text';
         $scope.mobile_icon_show = 0;
+        $scope.mobile_menu_class = 'hide_mobile_menu';
 
         // В этой функции проходит загрузка данных, инициализация и первое построение приложения
         $http.get('test.json').then(function (value) {
@@ -142,6 +144,10 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
             }
             $scope.mobile_icon_show = argument_change;
             $scope.main_filter_func(argument_change);
+        }
+        $scope.mobile_menu_click = function() {
+            $scope.mobile_menu_class == 'hide_mobile_menu' ?
+                $scope.mobile_menu_class = 'show_mobile_menu' : $scope.mobile_menu_class = 'hide_mobile_menu';
         }
 
 

@@ -35,6 +35,102 @@
 
 <body ng-app="kazyna_app" ng-controller="kazyna_main">
 	<!-- Здесь пишем код -->
+<nav>
+	<div class="content">
+		<div class="catalog">
+			<img src="img/logo-menu.png" alt="">
+			<img src="img/burger_menu.png" alt="burger menu" ng-click="mobile_menu_click()">
+			<ul class="{{mobile_menu_class}}">
+				<li><a href="" ng-click="mobile_menu_click()">Главная </a></li>
+				<li><a href="" ng-click="mobile_menu_click()">Как создаем</a></li>
+				<li><a href="" ng-click="mobile_menu_click()">Каталог</a></li>
+				<li><a href="" ng-click="mobile_menu_click()">Примеры продукции</a></li>
+				<li><a href="" ng-click="mobile_menu_click()">Контакты</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<section class="section1">
+	<div class="content clear">
+		<div class="left_info">
+			<h2>Kazyna Gold</h2>
+			<h3>Отечественный производитель ювелирных украшений</h3>
+		</div>
+		<div class="center_info">
+			<img src="img/logo.png" alt="">
+		</div>
+		<div class="right_info">
+			<h3>8 (7172) <span class="bold">79-66-65</span></h3>
+			<h4>sales@kazyna-gold.kz</h4>
+		</div>
+	</div>
+</section>
+<section class="section2">
+	<div class="ornament_top"></div>
+	<div class="content">
+		<h3>Создание ювелирных изделий от дизайна до реализации</h3>
+		<h4>
+			<span class="bold">
+				Кольца <img src="img/list_image.png" alt="list">
+				Серьги  <img src="img/list_image.png" alt="list">
+				Кулоны   <img src="img/list_image.png" alt="list">
+				Сувениры
+			</span> из чистого золота
+		</h4>
+	</div>
+	<div class="ornament"></div>
+	<div class="video">
+		<div class="shadow">
+			<iframe width="540" height="325" src="https://www.youtube.com/embed/kO5f69vgpcc" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<a href=""><span>Посмотрите видео</span></a>
+		<img src="img/model1.png" alt="model_1">
+		<img src="img/model2.png" alt="model_2">
+	</div>
+</section>
+<section class="section3">
+	<div class="content clear">
+		<h2>Как создаем <span>эксклюзивное украшение для вас</span></h2>
+		<div class="icon_list clear">
+			<div class="icon_elem">
+				<h3>Разрабатываем дизайн по индивидуальному желанию заказчика</h3>
+				<div class="img_icon">
+					<img src="img/icon_1.png" alt="icon">
+					<img src="img/arrow_icon.png" alt="icon_arrow">
+				</div>
+			</div>
+			<div class="icon_elem">
+				<h3>Создаем и утверждаем 3D модель</h3>
+				<div class="img_icon">
+					<img src="img/icon_2.png" alt="icon">
+					<img src="img/arrow_icon.png" alt="icon_arrow">
+				</div>
+			</div>
+			<div class="icon_elem">
+				<h3>Создаем макет модели в воске</h3>
+				<div class="img_icon">
+					<img src="img/icon_3.png" alt="icon">
+					<img src="img/arrow_icon.png" alt="icon_arrow">
+				</div>
+			</div>
+			<div class="icon_elem last">
+				<h3>Изготавливаем эксклюзивное украшение, которое будет только у вас</h3>
+				<div class="img_icon">
+					<img src="img/icon_4.png" alt="icon">
+				</div>
+			</div>
+		</div>
+		<h3 class="mobile_head">
+			<span class="first">Все изделия изготавливаются</span>
+			<span class="second">из чистого золота высокой пробы</span>
+			<span class="third">Опрабированой в национальной палате</span>
+		</h3 class="mobile_head">
+		<h4 class="mobile_head">
+			<span class="first">Сроки изготовления</span>
+			<span class="second">от 3 до 5 недель</span>
+		</h4>
+	</div>
+</section>
 <div id="catalog">
 	<div class="content clear">
 		<div class="menu">
