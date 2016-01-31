@@ -443,4 +443,24 @@ $(document).ready(function() {
 
 	location.hash = '#page/2';
 	$('#canvas')[0].removeAttribute('style');
+
+	function initialize_main() {
+		var myLatlng = new google.maps.LatLng(43.207504, 76.883809);
+		var myCenterMarker = new google.maps.LatLng(43.207504, 76.883809);
+		var myOptions = {
+			zoom: 14,
+			center: myLatlng,
+			disableDefaultUI: true,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		var map = new google.maps.Map(document.getElementById("map_canvas_main"), myOptions);
+
+		var marker = new google.maps.Marker({
+			position: myCenterMarker,
+			map: map,
+			icon: 'img/geolabel.png'
+		});
+	};
+	//Инициализация карты
+	initialize_main();
 });

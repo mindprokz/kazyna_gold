@@ -146,6 +146,7 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
             $scope.mobile_icon_show = argument_change;
             $scope.main_filter_func(argument_change);
         }
+
         $scope.mobile_menu_click = function() {
             $scope.mobile_menu_class == 'hide_mobile_menu' ?
                 $scope.mobile_menu_class = 'show_mobile_menu' : $scope.mobile_menu_class = 'hide_mobile_menu';
