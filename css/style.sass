@@ -450,12 +450,14 @@ nav
 			margin-top: 74px
 			margin-bottom: 58px
 		img[alt="model"]
-			position: absolute
-			bottom: -145px
-			left: -155px
+			@include media_quer('tablet-hidden')
+			@include media_quer('desktop-visible')
 		.ornament
 			background: url(../img/ornament_white.png)
 			height: 17px
+	@include media_quer('desktop')
+		h4
+			font-size: 41px
 	#canvas
 		@include media_quer('small')
 			width: 280px
@@ -518,13 +520,125 @@ nav
 				left: -55px !important
 				background: url(../img/pics/arrow_lest.png) no-repeat
 				z-index: 25
+	img[alt="model"]
+		position: absolute
+		bottom: -145px
+		left: -155px
 
+#form
+	position: relative
+	@include media_quer('small')
+		border-bottom: 1px solid #d9d9d9
+		.big_device_block
+			@include media_quer('small-hidden')
+		.mobile_block
+			a.button
+				display: block
+				color: #8a0017
+				font-family: Arsenal, sans-serif
+				font-size: 20px
+				font-weight: 700
+				line-height: 33px
+				text-transform: uppercase
+				text-align: center
+				margin-top: 20px
+				&:hover
+					text-decoration: none
+				span
+					border-bottom: 1px dashed #8a0017
+			iframe
+				margin-top: 15px
+				margin-bottom: 20px
+		img[alt="model"]
+			@include media_quer('small-hidden')
+	@include media_quer('tablet')
+		.mobile_block
+			@include media_quer('tablet-hidden')
+		.big_device_block
+			padding-left: 20px
+			margin-top: 40px
+			h3
+				float: left
+				&.first
+					// Text style for "Так же в нашем"
+					color: #3a3a3a
+					font-family: Arsenal, sans-serif
+					font-size: 30px
+					font-weight: 700
+				&.second
+					margin-left: 96px
+					font-family: Arsenal, sans-serif
+					font-size: 30px
+					line-height: 42px
+
+					// Text style for "По адресу:"
+					color: #3a3a3a
+					font-weight: 700
+					span
+						// Text style for "Ул. Ахмета Бай"
+						color: #8a0017
+						font-weight: 400
+			form
+				h2
+					// Text style for "Закажите беспл"
+					color: #282828
+					font-family: Arsenal, sans-serif
+					font-size: 40px
+					font-weight: 700
+					padding-top: 147px
+					margin-bottom: 30px
+				input
+					width: 321px
+					height: 52px
+					padding-left: 15px
+					background: url(../img/input.jpg)
+					border: 0
+					outline: 0
+					color: white
+					font-family: Arsenal, sans-serif
+					font-size: 18px
+					font-weight: 400
+					margin-left: 47px
+					&[name="name"]
+						margin-left: 0
+					&:focus
+						outline: 0
+				button
+					background: url(../img/button_form.jpg)
+					border: 0
+					outline: 0
+					width: 155px
+					height: 48px
+					text-shadow: 0 1px 3px rgba(69, 69, 69, 0.68)
+					color: white
+					font-family: Arsenal, sans-serif
+					text-transform: uppercase
+					font-size: 22px
+					font-weight: 700
+					margin-left: 33px
+		.ornament
+			background: url(../img/ornament_black.png)
+			height: 13px
+			margin-top: 80px
+		img[alt="model"]
+			@include media_quer('tablet-hidden')
+	@include media_quer('desktop')
+		.big_device_block
+			padding-left: 132px
+		img[alt="model"]
+			@include media_quer('desktop-visible')
+			position: absolute
+			right: 0
+			bottom: -165px
 #catalog
+	@include media_quer('small')
+		padding-top: 20px
+		padding-bottom: 20px
 	@include media_quer('tablet')
 		background: url(../img/background/catalog.jpg) no-repeat
 		background-size: cover
-	padding-top: 55px
-	padding-bottom: 80px
+		padding-top: 55px
+		padding-bottom: 80px
 	.menu
 		@include media_quer('small-hidden')
 		@include media_quer('tablet-visible')
@@ -572,8 +686,8 @@ nav
 			background: linear-gradient(to bottom,  rgba(242,239,223,1) 0%,rgba(192,173,97,1) 100%)
 			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2efdf', endColorstr='#c0ad61',GradientType=0 )
 			-webkit-background-clip: text
-			//-moz-background-clip: text
-			//background-clip: text
+			-moz-background-clip: text
+			background-clip: text
 			color: transparent
 			text-align: center
 			position: relative
@@ -588,35 +702,47 @@ nav
 		@include media_quer('small')
 			width: 320px
 			margin: auto
+			.header
+				@include media_quer('small-hidden')
+			.mobile_header
+				color: #3a3a3a
+				font-family: Arsenal, sans-serif
+				font-size: 18px
+				font-weight: 700
+				text-align: center
+				margin-bottom: 20px
 		@include media_quer('tablet')
 			width: 625px
 			float: left
 			margin-left: 30px
+			.mobile_header
+				@include media_quer('tablet-hidden')
+			.header
+				background: rgb(242,239,223)
+				background: -moz-linear-gradient(top,  rgba(242,239,223,1) 0%, rgba(192,173,97,1) 100%)
+				background: -webkit-linear-gradient(top,  rgba(242,239,223,1) 0%,rgba(192,173,97,1) 100%)
+				background: linear-gradient(to bottom,  rgba(242,239,223,1) 0%,rgba(192,173,97,1) 100%)
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2efdf', endColorstr='#c0ad61',GradientType=0 )
+				-webkit-background-clip: text
+				//-moz-background-clip: text
+				//background-clip: text
+				color: transparent
+				text-align: center
+				position: relative
+				font-weight: bold
+				font-size: 31pt
+				padding-bottom: 40px
+				&:before
+					background: none
+					content: attr(data-text)
+					position: absolute
+					text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.2)
+					top: 0
 		@include media_quer('desktop')
 			width: 800px
 			float: left
 			margin-left: 50px
-		.header
-			background: rgb(242,239,223)
-			background: -moz-linear-gradient(top,  rgba(242,239,223,1) 0%, rgba(192,173,97,1) 100%)
-			background: -webkit-linear-gradient(top,  rgba(242,239,223,1) 0%,rgba(192,173,97,1) 100%)
-			background: linear-gradient(to bottom,  rgba(242,239,223,1) 0%,rgba(192,173,97,1) 100%)
-			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2efdf', endColorstr='#c0ad61',GradientType=0 )
-			-webkit-background-clip: text
-			//-moz-background-clip: text
-			//background-clip: text
-			color: transparent
-			text-align: center
-			position: relative
-			font-weight: bold
-			font-size: 31pt
-			padding-bottom: 40px
-			&:before
-				background: none
-				content: attr(data-text)
-				position: absolute
-				text-shadow: 2px 3px 1px rgba(0, 0, 0, 0.2)
-				top: 0
+
 		.info
 			width: 100%
 			padding: 10px
@@ -836,4 +962,23 @@ nav
 						font-size: 13pt
 						text-align: center
 
-			
+footer
+	@include media_quer('small')
+		padding-top: 25px
+		padding-bottom: 25px
+	@include media_quer('tablet')
+		padding-top: 45px
+		padding-bottom: 45px
+	h3
+		float: left
+		// Base text style
+		color: #272727
+		font-family: Arsenal, sans-serif
+		font-size: 15px
+		line-height: 25px
+		font-weight: 400
+		span
+			// Text style for "ТОО «KazynaGol"
+			font-weight: 700
+	img
+		float: right

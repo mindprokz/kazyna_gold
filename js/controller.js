@@ -104,6 +104,7 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
         // В этой функции проходит загрузка данных, инициализация и первое построение приложения
         $http.get('test.json').then(function (value) {
             $scope.catalog_thumnail = value.data;
+            console.log(value);
             $scope.main_filter_func(0);
 
             if( document.documentElement.clientWidth > 1230){
