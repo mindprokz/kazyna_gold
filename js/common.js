@@ -13,6 +13,26 @@ $(document).ready(function() {
 			return $(this).attr("src").replace(".svg", ".png");
 		});
 	};
+
+
+	$(".fancybox").click(function() {
+		$(".fancybox").fancybox({
+			maxWidth: 800,
+			maxHeight: 600,
+			fitToView: false,
+			width: document.documentElement.clientWidth > 700 ? '80%' : '90%',
+			height: document.documentElement.clientWidth > 700 ? '80%' : '50%',
+			autoSize: false,
+			closeClick: false,
+			openEffect: 'fade',
+			closeEffect: 'elastic',
+			helpers: {
+				title: {
+					type: 'inside'
+				}
+			}
+		});
+	});
 	//$('#app').on('click',function() {
     //
 	//});
@@ -21,19 +41,24 @@ $(document).ready(function() {
 	$("#application").submit(function() {
 		var data = {
 			name : document.querySelector('input[name="name"]').value,
-			email : document.querySelector('input[name="email"]').value,
 			telephone : document.querySelector('input[name="telephone"]').value,
 		}
 		$.ajax({
 			type: "POST",
-			url: "mail.php",
+			url: "wp-content/themes/kazyna_gold/mail.php",
 			data: data,
 		}).done(function( value ) {
 			$('#mail')[0].innerHTML = value;
 			$('#mail').removeClass('not_visible_mail');
 			setTimeout(function() {
-				$("#form").trigger("reset");
+				$("#application").trigger("reset");
 			}, 1000);
+			setTimeout(function() {
+				$('#mail')[0].setAttribute('style', 'opacity: 0;');
+				setTimeout(function() {
+					$('#mail').addClass('not_visible_mail');
+				}, 500);
+			}, 5000);
 		});
 		return false;
 	});
@@ -434,9 +459,11 @@ $(document).ready(function() {
 
 	yepnope({
 		test : Modernizr.csstransforms,
-		yep: ['libs/turnjs/turn.js'],
-		nope: ['libs/turnjs/turn.html4.min.js'],
-		both: ['libs/turnjs/zoom.min.js', 'libs/turnjs/magazine.js', 'css/magazine.css'],
+		yep: ['wp-content/themes/kazyna_gold/libs/turnjs/turn.js'],
+		nope: ['wp-content/themes/kazyna_gold/libs/turnjs/turn.html4.min.js'],
+		both: ['wp-content/themes/kazyna_gold/libs/turnjs/zoom.min.js',
+			'wp-content/themes/kazyna_gold/libs/turnjs/magazine.js',
+			'wp-content/themes/kazyna_gold/css/magazine.css'],
 		complete: loadApp
 	});
 
@@ -458,9 +485,26 @@ $(document).ready(function() {
 		var marker = new google.maps.Marker({
 			position: myCenterMarker,
 			map: map,
-			icon: 'img/geolabel.png'
+			icon: 'wp-content/themes/kazyna_gold/img/geolabel.png'
 		});
 	};
 	//Инициализация карты
 	initialize_main();
+	;(function($){
+		$(document).on('click', 'a[href^=#]', function () {
+			$('html, body').animate({ scrollTop:  $('a[name="'+this.hash.slice(1)+'"]').offset().top - 152 }, 1000 );
+			return false;
+		});
+	})(jQuery);
+
+	setInterval(function(){
+		if(window.pageYOffset > 300){
+			document.querySelector('#top_header2').classList.remove('closed_menu');
+			document.querySelector('#top_header2').classList.add('opened_menu');
+		}else{
+			document.querySelector('#top_header2').classList.add('closed_menu');
+			document.querySelector('#top_header2').classList.remove('opened_menu');
+		};
+	},200);
 });
+

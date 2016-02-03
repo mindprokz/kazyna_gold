@@ -8,8 +8,9 @@
 
 	<meta charset="utf-8">
 
-	<title>Заголовок</title>
-	<meta name="description" content="">
+	<title>KazynaGold - ювелирные изделия по индивидуальному дизайну в Астане</title>
+	<meta name="description" content="«Kazyna Gold» создает уникальные ювелирные украшения из золота на заказ. А также Вы можете выбрать готовые украшения из нашей коллекции. Неповторимый дизайн, высокое качество подтвержденное Национальным центром экспертизы и сертификации, делает наши изделия непревзойденными. ">
+	<meta name="Keywords" content="золото, золото на заказ, украшения,">
 	<!-- css normalize -->
 	<style>
 		.clear:after{content:" ";display:table;clear:both}*{box-sizing:border-box}body{margin:0;padding:0}h1,h2,h3,h4,h5,h6,ul,li,figure,p{-webkit-margin-before:0;-webkit-margin-after:0;font-weight:400;margin:0;-webkit-padding-start:0}a{text-decoration:none}
@@ -20,16 +21,16 @@
 	<style></style>
 	
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 minimum-scale=1">
 
-	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
-	<link rel="stylesheet" href="fonts/arsenal/arsenal.css">
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri();?>/img/favicon/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri();?>/img/favicon/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri();?>/img/favicon/apple-touch-icon-114x114.png">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/fonts/arsenal/arsenal.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="https://code.angularjs.org/1.4.8/angular-animate.min.js"></script>
-	<script src="js/controller.js"></script>
+	<script src="<?php echo get_template_directory_uri();?>/js/controller.js"></script>
 
 </head>
 
@@ -38,26 +39,27 @@
 <nav>
 	<div class="content">
 		<div class="catalog">
-			<img src="img/logo-menu.png" alt="">
-			<img src="img/burger_menu.png" alt="burger menu" ng-click="mobile_menu_click()">
+			<img src="<?php echo get_template_directory_uri();?>/img/logo-menu.png" alt="">
+			<img src="<?php echo get_template_directory_uri();?>/img/burger_menu.png" alt="burger menu" ng-click="mobile_menu_click()">
 			<ul class="{{mobile_menu_class}}">
-				<li><a href="" ng-click="mobile_menu_click()">Главная </a></li>
-				<li><a href="" ng-click="mobile_menu_click()">Как создаем</a></li>
-				<li><a href="" ng-click="mobile_menu_click()">Каталог</a></li>
-				<li><a href="" ng-click="mobile_menu_click()">Примеры продукции</a></li>
-				<li><a href="" ng-click="mobile_menu_click()">Контакты</a></li>
+				<li><a href="#main" ng-click="mobile_menu_click()">Главная </a></li>
+				<li><a href="#works" ng-click="mobile_menu_click()">Как создаем</a></li>
+				<li><a href="#catalog" ng-click="mobile_menu_click()">Каталог</a></li>
+				<li><a href="#example" ng-click="mobile_menu_click()">Примеры продукции</a></li>
+				<li><a href="#contact" ng-click="mobile_menu_click()">Контакты</a></li>
 			</ul>
 		</div>
 	</div>
 </nav>
 <section class="section1">
+	<a name="main"></a>
 	<div class="content clear">
 		<div class="left_info">
 			<h2>Kazyna Gold</h2>
 			<h3>Отечественный производитель ювелирных украшений</h3>
 		</div>
 		<div class="center_info">
-			<img src="img/logo.png" alt="">
+			<img src="<?php echo get_template_directory_uri();?>/img/logo.png" alt="">
 		</div>
 		<div class="right_info">
 			<h3>8 (7172) <span class="bold">79-66-65</span></h3>
@@ -71,9 +73,9 @@
 		<h3>Создание ювелирных изделий от дизайна до реализации</h3>
 		<h4>
 			<span class="bold">
-				Кольца <img src="img/list_image.png" alt="list">
-				Серьги  <img src="img/list_image.png" alt="list">
-				Кулоны   <img src="img/list_image.png" alt="list">
+				Кольца <img src="<?php echo get_template_directory_uri();?>/img/list_image.png" alt="list">
+				Серьги  <img src="<?php echo get_template_directory_uri();?>/img/list_image.png" alt="list">
+				Кулоны   <img src="<?php echo get_template_directory_uri();?>/img/list_image.png" alt="list">
 				Сувениры
 			</span> из чистого золота
 		</h4>
@@ -81,42 +83,43 @@
 	<div class="ornament"></div>
 	<div class="video">
 		<div class="shadow">
-			<iframe width="540" height="325" src="https://www.youtube.com/embed/kO5f69vgpcc" frameborder="0" allowfullscreen></iframe>
+			<iframe width="540" height="325" src="https://www.youtube.com/embed/2wgdz2wxJdI" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<a href=""><span>Посмотрите видео</span></a>
-		<img src="img/model1.png" alt="model_1">
-		<img src="img/model2.png" alt="model_2">
+		<img src="<?php echo get_template_directory_uri();?>/img/model1.png" alt="model_1">
+		<img src="<?php echo get_template_directory_uri();?>/img/model2.png" alt="model_2">
 	</div>
 </section>
 <section class="section3">
+	<a name="works"></a>
 	<div class="content clear">
 		<h2>Как создаем <span>эксклюзивное украшение для вас</span></h2>
 		<div class="icon_list clear">
 			<div class="icon_elem">
 				<h3>Разрабатываем дизайн по индивидуальному желанию заказчика</h3>
 				<div class="img_icon">
-					<img src="img/icon_1.png" alt="icon">
-					<img src="img/arrow_icon.png" alt="icon_arrow">
+					<img src="<?php echo get_template_directory_uri();?>/img/icon_1.png" alt="icon">
+					<img src="<?php echo get_template_directory_uri();?>/img/arrow_icon.png" alt="icon_arrow">
 				</div>
 			</div>
 			<div class="icon_elem">
 				<h3>Создаем и утверждаем 3D модель</h3>
 				<div class="img_icon">
-					<img src="img/icon_2.png" alt="icon">
-					<img src="img/arrow_icon.png" alt="icon_arrow">
+					<img src="<?php echo get_template_directory_uri();?>/img/icon_2.png" alt="icon">
+					<img src="<?php echo get_template_directory_uri();?>/img/arrow_icon.png" alt="icon_arrow">
 				</div>
 			</div>
 			<div class="icon_elem">
 				<h3>Создаем макет модели в воске</h3>
 				<div class="img_icon">
-					<img src="img/icon_3.png" alt="icon">
-					<img src="img/arrow_icon.png" alt="icon_arrow">
+					<img src="<?php echo get_template_directory_uri();?>/img/icon_3.png" alt="icon">
+					<img src="<?php echo get_template_directory_uri();?>/img/arrow_icon.png" alt="icon_arrow">
 				</div>
 			</div>
 			<div class="icon_elem last">
 				<h3>Изготавливаем эксклюзивное украшение, которое будет только у вас</h3>
 				<div class="img_icon">
-					<img src="img/icon_4.png" alt="icon">
+					<img src="<?php echo get_template_directory_uri();?>/img/icon_4.png" alt="icon">
 				</div>
 			</div>
 		</div>
@@ -124,7 +127,7 @@
 			<span class="first">Все изделия изготавливаются</span>
 			<span class="second">из чистого золота высокой пробы</span>
 			<span class="third">Опрабированой в национальной палате</span>
-		</h3 class="mobile_head">
+		</h3>
 		<h4 class="mobile_head">
 			<span class="first">Сроки изготовления</span>
 			<span class="second">от 3 до 5 недель</span>
@@ -132,6 +135,7 @@
 	</div>
 </section>
 <section id="magazine">
+	<a name="catalog"></a>
 	<div class="content">
 		<h3>Примеры работ</h3>
 		<h4>Все изделия из золота с подтвержденной пробой Национального центра экспертизы и сертификации</h4>
@@ -152,37 +156,37 @@
 				<div>
 					<ul>
 						<li class="d">
-							<img src="pages/1-thumb.jpg" width="76" height="100" class="page-1">
-							<img src="pages/2-thumb.jpg" width="76" height="100" class="page-2">
+							<img <?php echo get_template_directory_uri();?>/pages/1-thumb.jpg" width="76" height="100" class="page-1">
+							<img src="<?php echo get_template_directory_uri();?>/pages/2-thumb.jpg" width="76" height="100" class="page-2">
 							<span>1</span>
 						</li>
 						<li class="d">
-							<img src="pages/2-thumb.jpg" width="76" height="100" class="page-3">
-							<img src="pages/3-thumb.jpg" width="76" height="100" class="page-4">
+							<img src="<?php echo get_template_directory_uri();?>/pages/2-thumb.jpg" width="76" height="100" class="page-3">
+							<img src="<?php echo get_template_directory_uri();?>/pages/3-thumb.jpg" width="76" height="100" class="page-4">
 							<span>2-3</span>
 						</li>
 						<li class="d">
-							<img src="pages/4-thumb.jpg" width="76" height="100" class="page-5">
-							<img src="pages/5-thumb.jpg" width="76" height="100" class="page-6">
+							<img src="<?php echo get_template_directory_uri();?>/pages/4-thumb.jpg" width="76" height="100" class="page-5">
+							<img src="<?php echo get_template_directory_uri();?>/pages/5-thumb.jpg" width="76" height="100" class="page-6">
 							<span>4-5</span>
 						</li>
 						<li class="d">
-							<img src="pages/6-thumb.jpg" width="76" height="100" class="page-7">
-							<img src="pages/7-thumb.jpg" width="76" height="100" class="page-8">
+							<img src="<?php echo get_template_directory_uri();?>/pages/6-thumb.jpg" width="76" height="100" class="page-7">
+							<img src="<?php echo get_template_directory_uri();?>/pages/7-thumb.jpg" width="76" height="100" class="page-8">
 							<span>6-7</span>
 						</li>
 						<li class="d">
-							<img src="pages/8-thumb.jpg" width="76" height="100" class="page-9">
-							<img src="pages/9-thumb.jpg" width="76" height="100" class="page-10">
+							<img src="<?php echo get_template_directory_uri();?>/pages/8-thumb.jpg" width="76" height="100" class="page-9">
+							<img src="<?php echo get_template_directory_uri();?>/pages/9-thumb.jpg" width="76" height="100" class="page-10">
 							<span>8-9</span>
 						</li>
 						<li class="d">
-							<img src="pages/10-thumb.jpg" width="76" height="100" class="page-11">
-							<img src="pages/11-thumb.jpg" width="76" height="100" class="page-12">
+							<img src="<?php echo get_template_directory_uri();?>/pages/10-thumb.jpg" width="76" height="100" class="page-11">
+							<img src="<?php echo get_template_directory_uri();?>/pages/11-thumb.jpg" width="76" height="100" class="page-12">
 							<span>10-11</span>
 						</li>
 						<li class="d">
-							<img src="pages/12-thumb.jpg" width="76" height="100" class="page-13">
+							<img src="<?php echo get_template_directory_uri();?>/pages/12-thumb.jpg" width="76" height="100" class="page-13">
 							<span>12</span>
 						</li>
 					</ul>
@@ -190,7 +194,7 @@
 			</div>
 		</div>
 		<h5>Сроки изготовления от 3 до 5 недель</h5>
-		<img src="img/model3.png" alt="model">
+		<img src="<?php echo get_template_directory_uri();?>/img/model3.png" alt="model">
 	</div>
 	<div class="ornament"></div>
 </section>
@@ -198,26 +202,26 @@
 	<div class="content">
 		<div class="mobile_block">
 			<a href="" class="button"><span>Посмотрите видео</span></a>
-			<iframe width="300" height="165" src="https://www.youtube.com/embed/kO5f69vgpcc" frameborder="0" allowfullscreen></iframe>
+			<iframe width="300" height="165" src="https://www.youtube.com/embed/2wgdz2wxJdI" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<div class="big_device_block clear">
 			<h3 class="first">Так же в нашем магазине вы можете <br> выбрать уже готовые украшения
 			</h3>
 			<h3 class="second">По адресу: <br>
 				<span>Ул. Ахмета Байтурсынова 5</span></h3>
-			<form action="">
+			<form action="wp-content/themes/kazyna_gold/mail.php" id="application" method="POST" name="application">
 				<h2>Закажите бесплатную консультацию</h2>
-				<input type="text" name="name" placeholder="Ваше имя" required>
-				<input type="tel" name="tel" placeholder="Ваш телефон" required>
+				<input type="text" name="name"  maxlength="20"  placeholder="Ваше имя" required>
+				<input type="tel" name="telephone" maxlength="20" placeholder="Ваш телефон" required>
 				<button>Отправить</button>
 			</form>
-			<img src="" alt="">
 		</div>
 	</div>
 	<div class="ornament"></div>
-	<img src="img/model4.png" alt="model">
+	<img src="<?php echo get_template_directory_uri();?>/img/model4.png" alt="model">
 </section>
 <section id="catalog">
+	<a name="example"></a>
 	<div class="content clear">
 		<div class="menu">
 			<div class="content_menu">
@@ -227,7 +231,7 @@
 			</div>
 			<div ng-repeat="iter in catalog_filter" class="category_elem {{iter.active}}" ng-click="main_filter_func($index)">
 				<div class="content_menu">
-					<img ng-src="{{'img/icon_catalog/'+iter.src+'.png'}}" alt="">
+					<img ng-src="{{'<?php echo get_template_directory_uri();?>/img/icon_catalog/'+iter.src+'.png'}}" alt="">
 					<h2>{{iter.name}}</h2>
 					<div class="line"></div>
 				</div>
@@ -252,16 +256,16 @@
 										<option value="another">Остальное</option>
 									</select>
 									<div class="select_image">
-										<img ng-src="img/icon_catalog/{{mobile_icon_show + 1}}.png" alt="">
+										<img ng-src="<?php echo get_template_directory_uri();?>/img/icon_catalog/{{mobile_icon_show + 1}}.png" alt="">
 									</div>
 								</div>
-								<div class="image">
+								<a href="{{catalog_window.src_big}}" class="fancybox"><div class="image">
 									<div class="watched_mobile"><span>{{active_elem + 1}}</span> из {{length_watch[1]}}</div>
 									<img ng-src="{{catalog_window.src_big}}" alt="image">
-									<img src="img/zoom.png" alt="zoom">
+									<img src="<?php echo get_template_directory_uri();?>/img/zoom.png" alt="zoom">
 									<div class="arrow arrow_left" ng-click="arrow_click(active_elem - 1)"></div>
 									<div class="arrow arrow_right" ng-click="arrow_click(active_elem + 1)"></div>
-								</div>
+								</div></a>
 								<button ng-click="show_post == 'show_text' ? show_post = 'hide_text' : show_post = 'show_text'">Описание</button>
 								<div class="text {{show_post}}">
 									<h3>Описание</h3>
@@ -293,6 +297,7 @@
 	</div>
 </section>
 <section id="map">
+	<a name="contact"></a>
 	<div class="content clear">
 		<div class="info">
 			<h2>Контакты</h2>
@@ -308,9 +313,26 @@
 <footer>
 	<div class="content clear">
 		<h3> <span>ТОО «KazynaGold»</span> —  © 2015</h3>
-		<img src="img/mindpro.png" alt="mindpro">
+		<img src="<?php echo get_template_directory_uri();?>/img/mindpro.png" alt="mindpro">
 	</div>
 </footer>
+<div id="top_header2">
+	<div class="content clear">
+		<img src="<?php echo get_template_directory_uri();?>/img/kazyna.png" alt="logo">
+		<ul class="menu">
+			<li><a href="#main"">Главная </a></li>
+			<li><a href="#works"">Как создаем</a></li>
+			<li><a href="#catalog"">Каталог</a></li>
+			<li><a href="#example"">Примеры продукции</a></li>
+			<li><a href="#contact"">Контакты</a></li>
+		</ul>
+		<div class="contact">
+			<div class="number">8 (7172) <span class="bold">79-66-65</span></div>
+			<div class="mail">sales@kazyna-gold.kz</div>
+		</div>
+	</div>
+</div>
+<div id="mail" class="not_visible_mail"></div>
 <!--     Пример формы обратной связи          -->
 	<!--<div class="main">-->
       <!--<h3>Внимание</h3>-->
@@ -328,10 +350,10 @@
 	<!--</div>-->
 	<!--<div class="hidden"></div>-->
 	<!--&lt;!&ndash;[if lt IE 9]>-->
-	<!--<script src="libs/html5shiv/es5-shim.min.js"></script>-->
-	<!--<script src="libs/html5shiv/html5shiv.min.js"></script>-->
-	<!--<script src="libs/html5shiv/html5shiv-printshiv.min.js"></script>-->
-	<!--<script src="libs/respond/respond.min.js"></script>-->
+	<!--<script src="<?php echo get_template_directory_uri();?>/libs/html5shiv/es5-shim.min.js"></script>-->
+	<!--<script src="<?php echo get_template_directory_uri();?>/libs/html5shiv/html5shiv.min.js"></script>-->
+	<!--<script src="<?php echo get_template_directory_uri();?>/libs/html5shiv/html5shiv-printshiv.min.js"></script>-->
+	<!--<script src="<?php echo get_template_directory_uri();?>/libs/respond/respond.min.js"></script>-->
 	<!--<![endif]&ndash;&gt;-->
 
 	<!-- Load CSS (remove/comment after release) -->
@@ -339,25 +361,32 @@
 	//Load Libs CSS
 	var ms=document.createElement("link");
 	ms.rel="stylesheet";
-	ms.href="libs/animate/animate.css";
+	ms.href="<?php echo get_template_directory_uri();?>/libs/animate/animate.css";
 	document.getElementsByTagName("head")[0].appendChild(ms);
 
 	//Header Styles (compress & paste to header after release)
 	var ms=document.createElement("link");
 	ms.rel="stylesheet";
-	ms.href="css/style.css";
+	ms.href="<?php echo get_template_directory_uri();?>/css/style.css";
+	document.getElementsByTagName("head")[0].appendChild(ms);
+
+	//Fancy box css
+	var ms=document.createElement("link");
+	ms.rel="stylesheet";
+	ms.href="<?php echo get_template_directory_uri();?>/libs/fancybox/source/jquery.fancybox.css";
 	document.getElementsByTagName("head")[0].appendChild(ms);
 </script>
 
 <!-- Load Scripts -->
 <script>var scr = {"scripts":[
-	{"src" : "libs/modernizr/modernizr.2.5.3.min.js", "async" : false},
-	{"src" : "libs/jquery/jquery-1.11.2.min.js", "async" : false},
-	{"src" : "libs/animate/animate-css.js", "async" : false},
-	{"src" : "libs/Wow/wow.min.js", "async" : false},
-	{"src" : "libs/hash/hash.js", "async" : false},
+	{"src" : "<?php echo get_template_directory_uri();?>/libs/modernizr/modernizr.2.5.3.min.js", "async" : false},
+	{"src" : "<?php echo get_template_directory_uri();?>/libs/jquery/jquery-1.11.2.min.js", "async" : false},
+	{"src" : "<?php echo get_template_directory_uri();?>/libs/animate/animate-css.js", "async" : false},
+	{"src" : "<?php echo get_template_directory_uri();?>/libs/Wow/wow.min.js", "async" : false},
+	{"src" : "<?php echo get_template_directory_uri();?>/libs/hash/hash.js", "async" : false},
 	{"src" : "http://maps.google.com/maps/api/js", "async" : false},
-	{"src" : "js/common.js", "async" : false},
+	{"src" : "<?php echo get_template_directory_uri();?>/libs/fancybox/source/jquery.fancybox.pack.js", "async" : false},
+	{"src" : "<?php echo get_template_directory_uri();?>/js/common.js", "async" : false},
 	]};!function(t,n,r){"use strict";var c=function(t){if("[object Array]"!==Object.prototype.toString.call(t))return!1;for(var r=0;r<t.length;r++){var c=n.createElement("script"),e=t[r];c.src=e.src,c.async=e.async,n.body.appendChild(c)}return!0};t.addEventListener?t.addEventListener("load",function(){c(r.scripts);},!1):t.attachEvent?t.attachEvent("onload",function(){c(r.scripts)}):t.onload=function(){c(r.scripts)}}(window,document,scr);
 </script>
 </body>
