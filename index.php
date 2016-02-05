@@ -28,6 +28,7 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri();?>/img/favicon/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri();?>/img/favicon/apple-touch-icon-114x114.png">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/fonts/arsenal/arsenal.css">
+	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/style.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="https://code.angularjs.org/1.4.8/angular-animate.min.js"></script>
 	<script src="<?php echo get_template_directory_uri();?>/js/controller.js"></script>
@@ -45,7 +46,7 @@
 				<li><a href="#main" ng-click="mobile_menu_click()">Главная </a></li>
 				<li><a href="#works" ng-click="mobile_menu_click()">Как создаем</a></li>
 				<li><a href="#catalog" ng-click="mobile_menu_click()">Каталог</a></li>
-				<li><a href="#example" ng-click="mobile_menu_click()">Примеры продукции</a></li>
+				<li><a href="#example" ng-click="mobile_menu_click()">Изделия в наличии</a></li>
 				<li><a href="#contact" ng-click="mobile_menu_click()">Контакты</a></li>
 			</ul>
 		</div>
@@ -77,7 +78,8 @@
 				Серьги  <img src="<?php echo get_template_directory_uri();?>/img/list_image.png" alt="list">
 				Кулоны   <img src="<?php echo get_template_directory_uri();?>/img/list_image.png" alt="list">
 				Сувениры
-			</span> из чистого золота
+			 из чистого золота
+			</span>
 		</h4>
 	</div>
 	<div class="ornament"></div>
@@ -85,7 +87,7 @@
 		<div class="shadow">
 			<iframe width="540" height="325" src="https://www.youtube.com/embed/2wgdz2wxJdI" frameborder="0" allowfullscreen></iframe>
 		</div>
-		<a href=""><span>Посмотрите видео</span></a>
+		<a><span>Посмотрите видео</span></a>
 		<img src="<?php echo get_template_directory_uri();?>/img/model1.png" alt="model_1">
 		<img src="<?php echo get_template_directory_uri();?>/img/model2.png" alt="model_2">
 	</div>
@@ -110,14 +112,14 @@
 				</div>
 			</div>
 			<div class="icon_elem">
-				<h3>Создаем макет модели в воске</h3>
+				<h3>Печатаем 3Д модель в воске</h3>
 				<div class="img_icon">
 					<img src="<?php echo get_template_directory_uri();?>/img/icon_3.png" alt="icon">
 					<img src="<?php echo get_template_directory_uri();?>/img/arrow_icon.png" alt="icon_arrow">
 				</div>
 			</div>
 			<div class="icon_elem last">
-				<h3>Изготавливаем эксклюзивное украшение, которое будет только у вас</h3>
+				<h3>Изготавливаем эксклюзивное украшение, которое будет только у Вас</h3>
 				<div class="img_icon">
 					<img src="<?php echo get_template_directory_uri();?>/img/icon_4.png" alt="icon">
 				</div>
@@ -139,6 +141,7 @@
 	<div class="content">
 		<h3>Примеры работ</h3>
 		<h4>Все изделия из золота с подтвержденной пробой Национального центра экспертизы и сертификации</h4>
+		<h5>Примеры наших работ по индивидуальному заказу</h5>
 		<div id="canvas" style="opacity: 0">
 			<div class="magazine-viewport">
 				<div class="container">
@@ -201,14 +204,14 @@
 <section id="form">
 	<div class="content">
 		<div class="mobile_block">
-			<a href="" class="button"><span>Посмотрите видео</span></a>
+			<a class="button"><span>Посмотрите видео</span></a>
 			<iframe width="300" height="165" src="https://www.youtube.com/embed/2wgdz2wxJdI" frameborder="0" allowfullscreen></iframe>
 		</div>
 		<div class="big_device_block clear">
 			<h3 class="first">Так же в нашем магазине вы можете <br> выбрать уже готовые украшения
 			</h3>
 			<h3 class="second">По адресу: <br>
-				<span>Ул. Ахмета Байтурсынова 5</span></h3>
+				<span>Ул. Ахмета Байтурсынова 5, <br> ЖК Хайвилл блок D6</span></h3>
 			<form action="wp-content/themes/kazyna_gold/mail.php" id="application" method="POST" name="application">
 				<h2>Закажите бесплатную консультацию</h2>
 				<input type="text" name="name"  maxlength="20"  placeholder="Ваше имя" required>
@@ -247,7 +250,7 @@
 							<div class="post_content clear">
 								<div class="mobile_select">
 									<select name="" id="" ng-model="filter_param" ng-change="mobile_select_filter_func()">
-										<option value="etno">Этно дизайн</option>
+										<option value="etno">Этнодизайн</option>
 										<option value="obr_">Обручальные кольца</option>
 										<option value="ring">Кольца</option>
 										<option value="serg">Серьги</option>
@@ -268,11 +271,12 @@
 								</div></a>
 								<button ng-click="show_post == 'show_text' ? show_post = 'hide_text' : show_post = 'show_text'">Описание</button>
 								<div class="text {{show_post}}">
-									<h3>Описание</h3>
-									<p>{{catalog_window.content}}</p>
+									<h3>Артикул: <span>{{catalog_window.articul}}</span></h3>
 									<h3>Вес: <span>{{catalog_window.weight}}</span></h3>
 									<h3>Вставки / Камни: <span>{{catalog_window.stones}}</span></h3>
 									<h3>Размеры в наличии:<span>{{catalog_window.size}}</span></h3>
+									<h3>Описание</h3>
+									<p>{{catalog_window.content}}</p>
 									<h2>Цена: <span>{{catalog_window.price}}</span></h2>
 								</div>
 							</div>
@@ -302,10 +306,10 @@
 		<div class="info">
 			<h2>Контакты</h2>
 			<h3>
-				<span class="adress">Казахстан, г. Астана <wbr> ул. Байтурсынова, д. 5 ЖК Хайвилл, блок D6, ВП-46</span>
+				<span class="adress">Казахстан, г. Астана <wbr> ул. Байтурсынова, д. 5 ЖК Хайвилл, блок D6</span>
 				<br>
 				<span class="bold">E-mail:</span> <span class="mail">sale@kazyna-gold.kz</span> <br>
-				<span class="bold">Телефон:</span> <span class="number">+7 (7172) 79-66-65</span></h3>
+				<span class="bold">Телефон:</span> <span class="number">+7 (771) 97-77-340</span></h3>
 		</div>
 	</div>
 	<div id="map_canvas_main"></div>
@@ -323,11 +327,11 @@
 			<li><a href="#main"">Главная </a></li>
 			<li><a href="#works"">Как создаем</a></li>
 			<li><a href="#catalog"">Каталог</a></li>
-			<li><a href="#example"">Примеры продукции</a></li>
+			<li><a href="#example"">Изделия в наличии</a></li>
 			<li><a href="#contact"">Контакты</a></li>
 		</ul>
 		<div class="contact">
-			<div class="number">8 (7172) <span class="bold">79-66-65</span></div>
+			<div class="number">+7 (771) <span class="bold"> 97-77-340 (в</span></div>
 			<div class="mail">sales@kazyna-gold.kz</div>
 		</div>
 	</div>
@@ -362,12 +366,6 @@
 	var ms=document.createElement("link");
 	ms.rel="stylesheet";
 	ms.href="<?php echo get_template_directory_uri();?>/libs/animate/animate.css";
-	document.getElementsByTagName("head")[0].appendChild(ms);
-
-	//Header Styles (compress & paste to header after release)
-	var ms=document.createElement("link");
-	ms.rel="stylesheet";
-	ms.href="<?php echo get_template_directory_uri();?>/css/style.css";
 	document.getElementsByTagName("head")[0].appendChild(ms);
 
 	//Fancy box css

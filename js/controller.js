@@ -4,7 +4,7 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
         // Данные для построения приложения
         $scope.catalog_filter = [
             {
-                name : 'Этно дизайн',
+                name : 'Этнодизайн',
                 src : '1',
                 active : 'active'
             },
@@ -103,7 +103,7 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
 
         // В этой функции проходит загрузка данных, инициализация и первое построение приложения
         $http.get('http://www.design.kazyna-gold.kz/?json=1').then(function (value) {
-
+            // Формирование основного массива данных, для его дальнейшей фильтрации
             $scope.catalog_thumnail = [];
             for(var i = 0, len = value.data.posts.length; i < len; i++){
                 $scope.catalog_thumnail[i] = {};
@@ -116,6 +116,7 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
                 $scope.catalog_thumnail[i].stones = value.data.posts[i].custom_fields.info_import[0];
                 $scope.catalog_thumnail[i].size = value.data.posts[i].custom_fields.info_size[0];
                 $scope.catalog_thumnail[i].price = value.data.posts[i].custom_fields.info_price[0];
+                $scope.catalog_thumnail[i].articul = value.data.posts[i].custom_fields.info_art[0];
 
             }
             $scope.main_filter_func(0);
@@ -227,6 +228,7 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
             $scope.catalog_window.stones = init_variable.stones;
             $scope.catalog_window.size = init_variable.size;
             $scope.catalog_window.price = init_variable.price;
+            $scope.catalog_window.articul = init_variable.articul;
         }
 
         // нажатие на стрелки в миниатюре, стрелки показываются в мобильной версии

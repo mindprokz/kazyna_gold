@@ -149,7 +149,7 @@ nav {
   @media only screen and (min-width: 601px) {
     .section1 {
       padding-top: 64px;
-      padding-bottom: 74px; } }
+      padding-bottom: 20px; } }
   .section1 .left_info {
     font-family: Arsenal, sans-serif; }
     @media only screen and (max-width: 600px) {
@@ -161,7 +161,7 @@ nav {
         width: 245px; } }
     .section1 .left_info h2 {
       color: #8a0017;
-      font-size: 38px;
+      font-size: 25px;
       font-weight: 700;
       text-transform: uppercase; }
     .section1 .left_info h3 {
