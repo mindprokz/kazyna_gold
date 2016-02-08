@@ -63,6 +63,35 @@ $(document).ready(function() {
 		return false;
 	});
 
+	$("#application_2").submit(function(event) {
+		event.preventDefault();
+		var data = {
+			name : document.querySelector('#application_2 input[name="name"]').value,
+			email : document.querySelector('#application_2 input[name="email"]').value,
+			telephone : document.querySelector('#application_2 input[name="telephone"]').value,
+		}
+		$.ajax({
+			type: "POST",
+			url: "wp-content/themes/kazyna_gold/mail.php",
+			data: data,
+		}).done(function( value ) {
+			document.querySelector('#form_modal').setAttribute('class', 'not_active_form');
+			$('#mail')[0].innerHTML = value;
+			$('#mail').removeClass('not_visible_mail');
+			$('#mail')[0].setAttribute('style', 'opacity: 1;');
+			setTimeout(function() {
+				$("#application").trigger("reset");
+			}, 1000);
+			setTimeout(function() {
+				$('#mail')[0].setAttribute('style', 'opacity: 0;');
+				setTimeout(function() {
+					$('#mail').addClass('not_visible_mail');
+				}, 500);
+			}, 5000);
+
+		});
+		return false;
+	});
 	//Chrome Smooth Scroll
 	try {
 		$.browserSelector();
@@ -472,8 +501,8 @@ $(document).ready(function() {
 	$('#canvas')[0].removeAttribute('style');
 
 	function initialize_main() {
-		var myLatlng = new google.maps.LatLng(43.207504, 76.883809);
-		var myCenterMarker = new google.maps.LatLng(43.207504, 76.883809);
+		var myLatlng = new google.maps.LatLng(51.126723, 71.463672);
+		var myCenterMarker = new google.maps.LatLng(51.126723, 71.463672);
 		var myOptions = {
 			zoom: 14,
 			center: myLatlng,
@@ -506,5 +535,20 @@ $(document).ready(function() {
 			document.querySelector('#top_header2').classList.remove('opened_menu');
 		};
 	},200);
+
+	document.querySelector('#get_form').onclick = function(event) {
+		event.preventDefault();
+		document.querySelector('#form_modal').classList.remove('not_active_form');
+		document.querySelector('#form_modal').classList.add('active_form');
+	};
+	document.querySelector('.close__form').onmousemove = function() {
+		document.querySelector('#form_modal').setAttribute('style', '-webkit-filter:opacity(0.5)');
+	};
+	document.querySelector('.close__form').onmouseout = function() {
+		document.querySelector('#form_modal').removeAttribute('style');
+	}
+	document.querySelector('.close__form').onclick = function() {
+		document.querySelector('#form_modal').setAttribute('class', 'not_active_form');
+	}
 });
 

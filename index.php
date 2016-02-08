@@ -23,13 +23,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 minimum-scale=1">
 
-	<link rel="shortcut icon" href="<?php echo get_template_directory_uri();?>/img/favicon/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="<?php echo get_template_directory_uri();?>/img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_template_directory_uri();?>/img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="<?php echo get_template_directory_uri();?>/img/favicon/apple-touch-icon-114x114.png">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/fonts/arsenal/arsenal.css">
-	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/css/style.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	z<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="https://code.angularjs.org/1.4.8/angular-animate.min.js"></script>
 	<script src="<?php echo get_template_directory_uri();?>/js/controller.js"></script>
 
@@ -63,7 +57,7 @@
 			<img src="<?php echo get_template_directory_uri();?>/img/logo.png" alt="">
 		</div>
 		<div class="right_info">
-			<h3>8 (7172) <span class="bold">79-66-65</span></h3>
+			<h3>+7 (771) <span class="bold">97-77-340</span></h3>
 			<h4>sales@kazyna-gold.kz</h4>
 		</div>
 	</div>
@@ -262,13 +256,15 @@
 										<img ng-src="<?php echo get_template_directory_uri();?>/img/icon_catalog/{{mobile_icon_show + 1}}.png" alt="">
 									</div>
 								</div>
-								<a href="{{catalog_window.src_big}}" class="fancybox"><div class="image">
+								<div class="image">
 									<div class="watched_mobile"><span>{{active_elem + 1}}</span> из {{length_watch[1]}}</div>
 									<img ng-src="{{catalog_window.src_big}}" alt="image">
-									<img src="<?php echo get_template_directory_uri();?>/img/zoom.png" alt="zoom">
+									<a href="{{catalog_window.src_big}}" class="fancybox">
+										<img src="<?php echo get_template_directory_uri();?>/img/zoom.png" alt="zoom">
+									</a>
 									<div class="arrow arrow_left" ng-click="arrow_click(active_elem - 1)"></div>
 									<div class="arrow arrow_right" ng-click="arrow_click(active_elem + 1)"></div>
-								</div></a>
+								</div>
 								<button ng-click="show_post == 'show_text' ? show_post = 'hide_text' : show_post = 'show_text'">Описание</button>
 								<div class="text {{show_post}}">
 									<h3>Артикул: <span>{{catalog_window.articul}}</span></h3>
@@ -278,6 +274,7 @@
 									<h3>Описание</h3>
 									<p>{{catalog_window.content}}</p>
 									<h2>Цена: <span>{{catalog_window.price}}</span></h2>
+									<div id="get_form" class="button">Заказать</div>
 								</div>
 							</div>
 							<div class="thumbnails_conf clear">
@@ -331,9 +328,27 @@
 			<li><a href="#contact"">Контакты</a></li>
 		</ul>
 		<div class="contact">
-			<div class="number">+7 (771) <span class="bold"> 97-77-340 (в</span></div>
+			<div class="number">+7 (771) <span class="bold"> 97-77-340</span></div>
 			<div class="mail">sales@kazyna-gold.kz</div>
 		</div>
+	</div>
+</div>
+<div id="form_modal" class="form_modal not_active_form">
+	<div class="wrapper_form">
+		<div class="closer close__form">
+			<svg version="1.1" id="icon__close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 212.982 212.982" style="enable-background:new 0 0 212.982 212.982;" xml:space="preserve">
+				<g>
+					<path style="fill-rule:evenodd;clip-rule:evenodd;" d="M131.804,106.491l75.936-75.936c6.99-6.99,6.99-18.323,0-25.312 c-6.99-6.99-18.322-6.99-25.312,0l-75.937,75.937L30.554,5.242c-6.99-6.99-18.322-6.99-25.312,0c-6.989,6.99-6.989,18.323,0,25.312l75.937,75.936L5.242,182.427c-6.989,6.99-6.989,18.323,0,25.312c6.99,6.99,18.322,6.99,25.312,0l75.937-75.937l75.937,75.937c6.989,6.99,18.322,6.99,25.312,0c6.99-6.99,6.99-18.322,0-25.312L131.804,106.491z"></path>
+				</g>
+			</svg>
+		</div>
+		<form id="application_2"  action="mail.php" method="POST" name="application_2">
+			<h2>Оставьте заявку</h2>
+			<input type="text" name="name" maxlength="20" placeholder="Введите ваше имя" required>
+			<input type="email" name="email" maxlength="30" placeholder="Введите ваш E-mail" required>
+			<input name="telephone" type="tel" maxlength="20" placeholder="Введите ваш телефон" required />
+			<button>Отправить</button>
+		</form>
 	</div>
 </div>
 <div id="mail" class="not_visible_mail"></div>
