@@ -813,13 +813,21 @@ nav
 							position: relative
 							@include media_quer('tablet')
 								width: 310px
+								height: 310px
 							@include media_quer('desktop')
 								width: 340px
+								height: 340px
 							img[alt="image"]
-								max-width: 100%
-								max-height: 100%
+								max-width: 120%
+								max-height: 120%
+								min-width: 100%
+								min-height: 100%
 								height: auto
 								width: auto
+								position: absolute
+								top: 50%
+								left: 50%
+								transform: translate(-50%, -50%)
 							img[alt="zoom"]
 								position: absolute
 								right: 10px
@@ -862,7 +870,6 @@ nav
 								color: #939393
 								span
 									color: #4f4e4e
-
 						.text
 							padding-left: 15px
 							float: left

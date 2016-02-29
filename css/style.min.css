@@ -860,15 +860,25 @@ nav {
       position: relative; }
       @media only screen and (min-width: 601px) {
         #catalog .window .info .border .border1 .post_content .image {
-          width: 310px; } }
+          width: 310px;
+          height: 310px; } }
       @media only screen and (min-width: 1230px) {
         #catalog .window .info .border .border1 .post_content .image {
-          width: 340px; } }
+          width: 340px;
+          height: 340px; } }
       #catalog .window .info .border .border1 .post_content .image img[alt="image"] {
-        max-width: 100%;
-        max-height: 100%;
+        max-width: 120%;
+        max-height: 120%;
+        min-width: 100%;
+        min-height: 100%;
         height: auto;
-        width: auto; }
+        width: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%); }
       #catalog .window .info .border .border1 .post_content .image img[alt="zoom"] {
         position: absolute;
         right: 10px;

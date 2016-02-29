@@ -102,7 +102,7 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
         $scope.mobile_menu_class = 'hide_mobile_menu';
 
         // В этой функции проходит загрузка данных, инициализация и первое построение приложения
-        $http.get('http://www.design.kazyna-gold.kz/?json=1').then(function (value) {
+        $http.get('http://www.design.kazyna-gold.kz/?json=1&count=-1').then(function (value) {
             // Формирование основного массива данных, для его дальнейшей фильтрации
             $scope.catalog_thumnail = [];
             for(var i = 0, len = value.data.posts.length; i < len; i++){
@@ -110,7 +110,14 @@ var app = angular.module('kazyna_app', ['ngAnimate'])
                 $scope.catalog_thumnail[i].src_thumb = value.data.posts[i].thumbnail;
                 $scope.catalog_thumnail[i].src_big =  value.data.posts[i].thumbnail_images.full.url;
                 $scope.catalog_thumnail[i].active = i == 0 ? 'active' : '';
-                $scope.catalog_thumnail[i].type = value.data.posts[i].categories[0].slug;
+                if(value.data.posts[i].categories.length > 1){
+                    $scope.catalog_thumnail[i].type = '';
+                    for (var j = 0; j < value.data.posts[i].categories.length; j++) {
+                        $scope.catalog_thumnail[i].type += value.data.posts[i].categories[j].slug
+                    }
+                }else{
+                    $scope.catalog_thumnail[i].type = value.data.posts[i].categories[0].slug;
+                }
                 $scope.catalog_thumnail[i].content = value.data.posts[i].content;
                 $scope.catalog_thumnail[i].weight = value.data.posts[i].custom_fields.info_weight[0];
                 $scope.catalog_thumnail[i].stones = value.data.posts[i].custom_fields.info_import[0];
