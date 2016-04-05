@@ -151,7 +151,7 @@ $(document).ready(function() {
 
 			// The number of pages
 
-			pages: 12,
+			pages: 13,
 
 			// Events
 

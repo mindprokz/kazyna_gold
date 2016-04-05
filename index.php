@@ -23,7 +23,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1 minimum-scale=1">
 
-	z<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script src="https://code.angularjs.org/1.4.8/angular-animate.min.js"></script>
 	<script src="<?php echo get_template_directory_uri();?>/js/controller.js"></script>
 
@@ -184,7 +184,12 @@
 						</li>
 						<li class="d">
 							<img src="<?php echo get_template_directory_uri();?>/pages/12-thumb.jpg" width="76" height="100" class="page-13">
-							<span>12</span>
+							<img src="<?php echo get_template_directory_uri();?>/pages/13-thumb.jpg" width="76" height="100" class="page-14">
+							<span>12-13</span>
+						</li>
+						<li class="d">
+							<img src="<?php echo get_template_directory_uri();?>/pages/14-thumb.jpg" width="76" height="100" class="page-15">
+							<span>14</span>
 						</li>
 					</ul>
 				</div>
@@ -387,6 +392,12 @@
 	var ms=document.createElement("link");
 	ms.rel="stylesheet";
 	ms.href="<?php echo get_template_directory_uri();?>/libs/fancybox/source/jquery.fancybox.css";
+	document.getElementsByTagName("head")[0].appendChild(ms);
+	
+	//main css
+	var ms=document.createElement("link");
+	ms.rel="stylesheet";
+	ms.href="<?php echo get_template_directory_uri();?>/css/style.css";
 	document.getElementsByTagName("head")[0].appendChild(ms);
 </script>
 
